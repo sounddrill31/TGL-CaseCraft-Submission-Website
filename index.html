@@ -276,7 +276,7 @@
       e.preventDefault();
       csvDropZone.classList.remove('bg-gray-100');
       const file = e.dataTransfer.files[0];
-      if (file && file.type === 'text/csv') {
+      if (file && file.name.toLowerCase().endsWith('.csv')) {
         document.getElementById('csvFileName').textContent = `Selected: ${file.name}`;
         document.getElementById('csvFileName').classList.remove('hidden');
         parseCSV(file);
